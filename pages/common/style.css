@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "MorrisRoman";
+  src: url("./../../resource/extra/MorrisRoman-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: "MorrisRoman";
+}
+
+.hidden {
+  display: none;
+}
+
+.section-hidden{
+  opacity : 0;
+  transition : all 1s; 
+  filter : blur(6px);  
+  /* transform : translateX(-99%);  */
+}
+
+.section-show{
+  opacity : 1;
+  filter : blur(0);
+  /* transform : translateX(0%);  */
+} 
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,162 @@
+@use './../../../variables' as variables
+ 
+.gallery
+    background-color: variables.$second-color
+    
+    &-header
+        //padding-top : 50px 
+    
+    &-top
+        //margin-top : 50px 
+    &-item
+        & h2
+            font-size : 40px
+            color : variables.$main-font-color
+            margin-top : 50px 
+
+        & p 
+            font-size : 24px  
+            color : #000
+            margin-top : 30px 
+
+        &-content
+            width : 70% 
+            margin : auto    
+
+    &-mid 
+        margin-top : 190px 
+
+        &-container
+            width : 90% 
+            margin : auto 
+
+    &-bottom
+        margin : auto
+        display : flex
+        flex-direction : column
+        align-items : center
+
+    &-line
+        height : 5px
+        background-color : variables.$main-font-color
+
+    &-header
+        margin-top : 60px   
+        color : variables.$main-font-color 
+        font-size : 96px
+
+    &-subtitle   
+        color : variables.$second-font-color   
+        font-size : 64px
+
+.soft-image 
+    width : 100%
+    max-width : 100%
+    height : auto
+    border-radius : 20px
+    overflow : hidden
+    border-radius : 15px
+    box-shadow : -5px 5px 5px 5px rgba(48, 47, 47, 0.5)
+
+    & img 
+        max-width : 100%
+        height : auto
+
+    & video 
+        transform : scale(1.035)
+        max-width : 100%
+        height : auto
+
+.circular-button 
+    display : inline-block
+    padding : 0px 40px
+    border : 7px solid variables.$main-font-color
+    border-radius : 50px
+    color : variables.$main-font-color
+    text-align : center
+    text-decoration : none
+    font-size : 48px
+    cursor : pointer
+    transition : background-position 0.5s, color 0.5s
+    margin : 10px 0 
+
+    &:last-child
+        margin-bottom : 100px     
+
+    &-top
+        background : linear-gradient(to top, transparent 50%, #fff 50%)
+        background-size : 100% 200%
+        background-position : 0 100%
+
+        &:hover
+            background-position : 0 0
+            color : variables.$second-font-color
+    
+    &-bottom  
+        background : linear-gradient(to bottom, transparent 0%, transparent 50%, #fff 50%, #fff 100%)
+        background-size : 100% 200%
+        background-position : 0 100%  
+        color : variables.$second-font-color
+
+        &:hover
+            background-position : 0 0
+            color : variables.$main-font-color
+
+.box 
+    position : relative
+    border-radius : 4px
+    overflow : hidden
+    box-shadow  : 0 1.4px 1.7px rgba(0, 0, 0, 0.017), 0 3.3px 4px rgba(0, 0, 0, 0.024),0 6.3px 7.5px rgba(0, 0, 0, 0.03),0 11.2px 13.4px rgba(0, 0, 0, 0.036),0 20.9px 25.1px rgba(0, 0, 0, 0.043),0 50px 60px rgba(0, 0, 0, 0.06)
+
+.zoom-in
+    
+    & p
+        position : absolute
+        left : 1%
+        text-align : center 
+        bottom :  1%
+        transition : all .3s ease
+        transform : scale(0.1)
+        opacity : 0
+        color : variables.$main-font-color
+        text-shadow : 3px 3px 3px variables.$second-font-color
+        font-size : 3vw
+
+    & video 
+        transition : all .3s ease  
+
+    & img 
+        transition : all .3s ease  
+
+    &:hover 
+        & img
+            transform : scale(1.1)
+            filter : grayscale(100%)
+
+        & video
+            transform : scale(1.1)
+            filter : grayscale(100%)
+        
+        & p
+            transform : scale(1)
+            transition : all .3s ease
+            opacity : 1
+
+@media (max-width: variables.$layout-breakpoint-small)
+    .gallery
+        &-top 
+            & h1 
+                font-size : 48px 
+            & h3 
+                font-size : 32px 
+        &-mid  
+            margin-top : 80px 
+            & .col 
+                margin-bottom : 50px 
+
+    .circular-button 
+        &:last-child
+            margin-bottom : 100px 
+    .zoom-in
+        & p
+            font-size : 32px

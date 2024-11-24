@@ -1,0 +1,102 @@
+@use './../../../variables' as variables
+
+.footer
+    width : 100%
+    min-height : 230px
+    background-color : variables.$footer-color 
+
+    &-logo
+        height : 70px
+        width : auto  
+        margin-right : 50px 
+        margin-top : 60px 
+
+    &-header
+        color : variables.$main-font-color
+        margin : 0
+        margin-top : 40px 
+        font-size : 36px 
+
+    &-text 
+
+        & p
+            color : variables.$main-font-color
+            margin : auto
+            font-size : 24px 
+
+    &-container 
+        display : block
+        align-items : center
+        width : 90% 
+        margin : auto 
+
+    & .social
+        &-media
+            transform: translateY(-35px) 
+        &-icon
+            
+            & img
+                height : 35px
+                width : auto  
+    .dot 
+        height : 50px
+        width : 50px
+        background-color : #fff
+        border-radius : 50%
+        display : inline-block
+        margin : auto 
+        text-align : center
+        line-height : 50px
+        margin : 10px 
+        transition : 0.3s 
+        transform : scale(1)
+        opacity : 1 
+        &:hover
+            transform : scale(1.15)
+            opacity : 0.85
+        & img 
+            margin : auto 
+            vertical-align: middle
+        
+
+.left-section
+    display : flex
+    align-items : center
+
+.right-section
+    text-align : right
+
+
+@media (max-width: variables.$layout-breakpoint-small)
+    .footer
+        & .social
+            &-media
+                transform: translateY(10px) 
+        &-logo
+            display : block   
+            margin : 0 auto 
+            padding-top : 15px 
+            
+        &-header
+            display : block
+            width : 100% 
+            margin : 0 auto 
+            text-align : center
+            padding-top : 15px 
+        &-text 
+            display : block
+            margin : 0 auto 
+            text-align : center
+            padding-top : 15px 
+
+            & p 
+                font-size : 16px 
+        & .right-section 
+            display : flex
+            text-align : center
+            justify-content : center
+            padding : 10px
+             
+    .left-section, .right-section
+        width : 100%
+        display : block  
